@@ -3,3 +3,8 @@ En el fútbol americano cada jugada es una batalla mental donde la estrategia lo
 Para frenar al rival, la defensa necesita leer la mente del contrincante. Los equipos atacantes suelen dejar huellas y repetir sus jugadas favoritas según las yardas que les falten o la forma en que se acomoden en la cancha.
 
 Aquí es donde entra la magia de este proyecto. Esta herramienta funciona como el arma secreta del entrenador defensivo. Recopila cada movimiento del rival, analiza sus hábitos y descifra sus patrones en segundos. Con este sistema, la defensa sabrá si el ataque planea correr o lanzar el balón antes de que la jugada comience, dándoles la ventaja táctica perfecta para anticiparse, dominar el campo y ganar el partido.
+
+
+Pseudocódigo:
+https://docs.google.com/document/d/1vcBP2eD2kOOiKXAopRjjQOmiho7Bfus2EfaI_j9LHik/edit?usp=sharing
+
