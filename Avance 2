@@ -1,2 +1,26 @@
 #Primer acercamiento al codigo del proyecto, primera prueba.
-print("Hola") 
+base_de_datos = []
+print("Escribe 1 para ingresar informacion de nuevas jugadas.")
+print("Escribe 2 para ver jugadas previamente hechas, y revisar porcentajes, aciertos etc.")
+Res1 = int(input(""))
+if Res1 == 1:
+    print("Formaciones a elegir: 1. Escopeta  2. Pistola   3. I-Form   4- Singleback")
+    Formacion= int(input("Ingresa el numero de la formación: "))
+    print("Ingresa el numero de down:")
+    Down= int(input(""))
+    print("Ingresa el yardaje por conseguir")
+    Yardas= int(input(""))
+    print("¿La jugada fue un:  1.pase  o  2.acarreo?")
+    Jugada= int(input(""))
+jugada_registrada = {
+        "formacion": Formacion,
+        "down": Down,
+        "yardas": Yardas,
+        "tipo": Jugada
+    }
+
+
+#Primero me quiero enfocar en la primera parte cuando escribe 1 en el primer int, porque creo que sera más complejo la segunda parte, y para ver si voy bien o no.
+#Tambien en la siguiente sesion preguntare como almacenar datos, para luego ofrecer una lista de los datos previamente dados.
+#El ultimo registro de datos me falta entender, y ver si es correcto, aparte de ver lo de base de datos de la linea2.
+#Pero creo que el programa va bien, es fluido y no es tedioso, que es justo lo que buscaba.
