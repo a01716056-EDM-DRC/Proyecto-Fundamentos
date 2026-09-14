@@ -1,0 +1,39 @@
+Entrada
+
+Equipo rival
+Down o número de oportunidad
+Yardas por avanzar
+Formación ofensiva
+Tipo de jugada
+
+Proceso
+1. Inicio
+2. Pedir el nombre del equipo rival
+  2.1. Guardar el nombre del equipo rival
+3. Crear una lista vacía llamada Registro de Jugadas (Equipo Rival*)
+4. Definir la variable Comenzar como “Sí”
+5. Mientras Comenzar sea igual a Sí hacer:
+  5.1. Pedir el número de Down
+    5.1.1. Guardar el número de Down
+  5.2. Pedir las yardas por avanzar
+    5.2.1. Guardar las yardas por avanzar
+  5.3. Pedir la formación ofensiva
+    5.3.1. Guardar la formación ofensiva
+  5.4 Pedir si fue pase o carrera
+    5.4.1. Guardar el tipo de jugada
+6. Agrupar todos los datos recolectados en Jugadas Registrada
+  6.1. Guardar Jugada Registrada dentro de Registro de Jugadas
+7. Preguntar si desea ingresar otra jugada
+  7.1. Si responde Sí, repetir el ciclo
+  7.2. Si responde No, cambiar la variable Comenzar a No
+8. Fin del ciclo
+9. Buscar en Registro de Jugadas y comparar las coincidencias encontradas
+10. Contar cuántas veces hicieron pase por formación y down 
+11. Contar cuántas veces hicieron carrera
+12. Calcular el porcentaje de pases y carreras
+13. Preguntar si quiere desvelar los porcentajes
+14. Guardar la lista completa
+15. Fin
+
+Salida
+Muestra el porcentaje de veces que el rival manda pase o carrera en esa situación, y porcentajes de acierto.
