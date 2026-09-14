@@ -12,13 +12,13 @@ if Res1 == 1:
     Yardas= int(input(""))
     print("¿La jugada fue un:  1.pase  o  2.acarreo?")
     Jugada= int(input(""))
-jugada_registrada = {
+    jugada_registrada = {
         "formacion": Formacion,
         "down": Down,
         "yardas": Yardas,
         "tipo": Jugada
     }
-
+base_de_datos.append(jugada_registrada)
 
 #Primero me quiero enfocar en la primera parte cuando escribe 1 en el primer int, porque creo que sera más complejo la segunda parte, y para ver si voy bien o no.
 #Tambien en la siguiente sesion preguntare como almacenar datos, para luego ofrecer una lista de los datos previamente dados.
