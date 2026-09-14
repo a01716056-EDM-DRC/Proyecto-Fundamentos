@@ -24,19 +24,22 @@ Proceso
   5.9. Agrupar todos los datos recolectados en Jugadas Registrada
   5.10. Guardar Jugada Registrada dentro de Registro de Jugadas
 6. Preguntar si desea ingresar otra jugada
-  6.1. Si responde Sí, Ir al paso 5.
+  6.1. Si responde Sí, Ir al paso 5.1.
   6.2. Si responde No, cambiar la variable Comenzar a No
 7. Fin del ciclo
 8. Buscar en Registro de Jugadas y comparar las coincidencias encontradas
 9. Contar cuántas veces hicieron pase por formación y down 
 10. Contar cuántas veces hicieron carrera
 11. Calcular el porcentaje de pases y carreras
-12. Preguntar si quiere desvelar los porcentajes
-13. Guardar la lista completa
+12. Guardar la lista completa
+13. Preguntar si quiere desvelar los porcentajes
+  13.1. Si responde "Sí", ir al paso 14
+  13.2. Si responde "No", ir al paso 15
 14. Mostrar en pantalla "Porcentaje de pase: " + porcentaje + "%"
 15. Fin
 
 Salida
 
 Porcentaje_Pase: Número decimal 
+Porcentaje_Carrera: Número decimal 
 Sugerencia: Texto 
