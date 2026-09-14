@@ -24,7 +24,7 @@ Proceso
 6. Agrupar todos los datos recolectados en Jugadas Registrada
   6.1. Guardar Jugada Registrada dentro de Registro de Jugadas
 7. Preguntar si desea ingresar otra jugada
-  7.1. Si responde Sí, repetir el ciclo
+  7.1. Si responde Sí, Ir al paso 5.
   7.2. Si responde No, cambiar la variable Comenzar a No
 8. Fin del ciclo
 9. Buscar en Registro de Jugadas y comparar las coincidencias encontradas
