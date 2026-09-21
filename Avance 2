@@ -18,9 +18,28 @@ if Res1 == 1:
         "yardas": Yardas,
         "tipo": Jugada
     }
-base_de_datos.append(jugada_registrada)
+    base_de_datos.append(jugada_registrada)
 
-#Primero me quiero enfocar en la primera parte cuando escribe 1 en el primer int, porque creo que sera más complejo la segunda parte, y para ver si voy bien o no.
-#Tambien en la siguiente sesion preguntare como almacenar datos, para luego ofrecer una lista de los datos previamente dados.
-#El ultimo registro de datos me falta entender, y ver si es correcto, aparte de ver lo de base de datos de la linea2.
-#Pero creo que el programa va bien, es fluido y no es tedioso, que es justo lo que buscaba.
+elif Res1 == 2:
+    print("CONSULTA DE TENDENCIAS OFENSIVAS")
+    
+    if len(base_de_datos) == 0:
+        print("No hay jugadas registradas en el sistema aún.")
+    else:
+        print("Formaciones a consultar: 1. Escopeta  2. Pistola  3. I-Form  4. Singleback")
+        formacion_buscar = int(input("Ingresa la formación que deseas analizar: "))
+        down_buscar = int(input("Ingresa el down que deseas analizar (1-4): "))
+
+        coincidencias = 0
+        total_pases = 0
+        total_carreras = 0
+        
+        for jugada in base_de_datos:
+
+            if jugada["formacion"] == formacion_buscar and jugada["down"] == down_buscar:
+                coincidencias = coincidencias + 1
+                
+                if jugada["tipo"] == 1:
+                    total_pases = total_pases + 1
+                elif jugada["tipo"] == 2:
+                    total_carreras = total_carreras + 1
