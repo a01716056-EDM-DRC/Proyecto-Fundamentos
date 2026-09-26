@@ -1,0 +1,53 @@
+##Avance con Def
+
+def seleccionar_jugada():
+    print("Formaciones a elegir: 1. Escopeta  2. Pistola   3. I-Form   4- Singleback")
+    formacion = int(input("Ingresa el número de la formación: "))
+    down = int(input("Ingresa el número de down: "))
+    yardas = int(input("Ingresa el yardaje por conseguir: "))
+    print("¿La jugada fue un:  1.pase  o  2.acarreo?")
+    jugada= int(input(""))
+    return formacion, down, yardas, jugada
+## Va a pedir la Formacion dando 4 opciones, luego el numero de down, que tambien son 4 opciones, luego pedira las yardas, que son cualquier numero del <=1 y 100>. 
+## Y al final pedir si fue acarreo o pase. Y regresar estos valores con sus diferentes valores.
+
+base_de_datos = []
+print("Escribe 1 para ingresar informacion de nuevas jugadas.")
+print("Escribe 2 para ver jugadas previamente hechas, y revisar porcentajes, aciertos etc.")
+Res1 = int(input(""))
+if Res1 == 1:
+  Formacion, Down, Yardas, Jugada = seleccionar_jugada()
+  jugada_registrada = {
+        "formacion": Formacion,
+        "down": Down,
+        "yardas": Yardas,
+        "tipo": Jugada
+  }
+  base_de_datos.append(jugada_registrada)
+  print("Jugada registrada con éxito")
+
+##Falta registrar la jugada, pues entiendo como guardarla aun en una base de datos (base_de_datos.append y eso) y con esto no se esta guardando.
+
+elif Res1 == 2:
+    print("CONSULTA DE TENDENCIAS OFENSIVAS")
+    
+    if len(base_de_datos) == 0:
+        print("No hay jugadas registradas en el sistema aún.")
+    else:
+        print("Formaciones a consultar: 1. Escopeta  2. Pistola  3. I-Form  4. Singleback")
+        formacion_buscar = int(input("Ingresa la formación que deseas analizar: "))
+        down_buscar = int(input("Ingresa el down que deseas analizar (1-4): "))
+ 
+        
+
+        coincidencias = 0
+        total_pases = 0
+        total_carreras = 0
+        
+        for jugada in base_de_datos:
+
+            if jugada["formacion"] == formacion_buscar and jugada["down"] == down_buscar:
+                coincidencias = coincidencias + 1
+
+## Aun falta aprender a registrar más jugadas, y a guardarlas correctamente.
+## Y falta concluir el paso 2, pues hasta ahora no muestra ningun porcentaje, ni nada.
