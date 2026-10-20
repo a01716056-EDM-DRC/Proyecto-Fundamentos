@@ -1,54 +1,81 @@
-##Avance con Def
-
 def seleccionar_jugada():
+    print("\n--- REGISTRO DE NUEVA JUGADA ---")
     print("Formaciones a elegir: 1. Escopeta  2. Pistola   3. I-Form   4- Singleback")
     formacion = int(input("Ingresa el número de la formación: "))
     down = int(input("Ingresa el número de down: "))
     yardas = int(input("Ingresa el yardaje por conseguir: "))
     print("¿La jugada fue un:  1.pase  o  2.acarreo?")
-    jugada= int(input(""))
+    jugada = int(input(""))
     return formacion, down, yardas, jugada
-## Va a pedir la Formacion dando 4 opciones, luego el numero de down, que tambien son 4 opciones, luego pedira las yardas, que son cualquier numero del <=1 y 100>. 
-## Y al final pedir si fue acarreo o pase. Y regresar estos valores con sus diferentes valores.
 
 base_de_datos = []
-print("Escribe 1 para ingresar informacion de nuevas jugadas.")
-print("Escribe 2 para ver jugadas previamente hechas, y revisar porcentajes, aciertos etc.")
-Res1 = int(input(""))
-if Res1 == 1:
-  Formacion, Down, Yardas, Jugada = seleccionar_jugada()
-  jugada_registrada = {
-        "formacion": Formacion,
-        "down": Down,
-        "yardas": Yardas,
-        "tipo": Jugada
-  }
-  base_de_datos.append(jugada_registrada)
-  print("Jugada registrada con éxito")
 
-##Falta registrar la jugada, pues entiendo como guardarla aun en una base de datos (base_de_datos.append y eso) y con esto no se esta guardando.
+while True:
+    print("\n==================================================")
+    print("Escribe 1 para ingresar informacion de nuevas jugadas.")
+    print("Escribe 2 para ver jugadas previamente hechas, y revisar porcentajes.")
+    print("Escribe 3 para salir del programa.")
+    print("==================================================")
+    Res1 = int(input("Selecciona una opción: "))
 
-elif Res1 == 2:
-    print("CONSULTA DE TENDENCIAS OFENSIVAS")
-    
-    if len(base_de_datos) == 0:
-        print("No hay jugadas registradas en el sistema aún.")
+    if Res1 == 1:
+        Formacion, Down, Yardas, Jugada = seleccionar_jugada()
+        jugada_registrada = {
+            "formacion": Formacion,
+            "down": Down,
+            "yardas": Yardas,
+            "tipo": Jugada
+        }
+        base_de_datos.append(jugada_registrada)
+        print("¡Jugada registrada con éxito!")
+
+    elif Res1 == 2:
+        print("\nCONSULTA DE TENDENCIAS OFENSIVAS")
+        
+        if len(base_de_datos) == 0:
+            print("No hay jugadas registradas en el sistema aún.")
+        else:
+            print("Formaciones a consultar: 1. Escopeta  2. Pistola  3. I-Form  4. Singleback")
+            formacion_buscar = int(input("Ingresa la formación que deseas analizar: "))
+            down_buscar = int(input("Ingresa el down que deseas analizar (1-4): "))
+            print("1. Corto yardaje: De 1 a 3 yardas. 2. Mediano metraje (Medium): De 4 a 6 yardas. 3.Largo metraje (Long): 7 yardas o más ")
+            yardas_buscar = int(input("Ingresa el rango de yardas por conseguir: "))
+
+            coincidencias = 0
+            total_pases = 0
+            total_carreras = 0
+            
+            for jugada in base_de_datos:
+                if jugada["yardas"] <= 3:
+                    rango_jugada = 1
+                elif 4 <= jugada["yardas"] <= 6:
+                    rango_jugada = 2
+                else:
+                    rango_jugada = 3
+
+                if jugada["formacion"] == formacion_buscar and jugada["down"] == down_buscar and rango_jugada == yardas_buscar:
+                    coincidencias = coincidencias + 1
+                    
+                    if jugada["tipo"] == 1:
+                        total_pases = total_pases + 1
+                    elif jugada["tipo"] == 2:
+                        total_carreras = total_carreras + 1
+
+            if coincidencias > 0:
+                print("\n=== REPORTE DE RESULTADOS ===")
+                print("Jugadas analizadas:", coincidencias)
+                print("Porcentaje de Pase:", (total_pases / coincidencias) * 100, "%")
+                print("Porcentaje de Carrera:", (total_carreras / coincidencias) * 100, "%")
+            else:
+                print("No se encontraron jugadas registradas con esos criterios.")
+
+    elif Res1 == 3:
+        print("Saliendo del programa...")
+        break
+
     else:
-        print("Formaciones a consultar: 1. Escopeta  2. Pistola  3. I-Form  4. Singleback")
-        formacion_buscar = int(input("Ingresa la formación que deseas analizar: "))
-        down_buscar = int(input("Ingresa el down que deseas analizar (1-4): "))
- 
-        
+        print("Opción no válida. Intenta de nuevo.")
 
-        coincidencias = 0
-        total_pases = 0
-        total_carreras = 0
-        
-        for jugada in base_de_datos:
 
-            if jugada["formacion"] == formacion_buscar and jugada["down"] == down_buscar:
-                coincidencias = coincidencias + 1
 
-## Aun falta aprender a registrar más jugadas, y a guardarlas correctamente.
-## Y falta concluir el paso 2, pues hasta ahora no muestra ningun porcentaje, ni nada.
 
