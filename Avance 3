@@ -6,7 +6,7 @@ def seleccionar_jugada():
     yardas = int(input("Ingresa el yardaje por conseguir: "))
     print("¿La jugada fue un:  1.pase  o  2.acarreo?")
     jugada = int(input(""))
-    return formacion, down, yardas, jugada
+    return [formacion, down, yardas, jugada]
 
 base_de_datos = []
 
@@ -19,13 +19,7 @@ while True:
     Res1 = int(input("Selecciona una opción: "))
 
     if Res1 == 1:
-        Formacion, Down, Yardas, Jugada = seleccionar_jugada()
-        jugada_registrada = {
-            "formacion": Formacion,
-            "down": Down,
-            "yardas": Yardas,
-            "tipo": Jugada
-        }
+        jugada_registrada = seleccionar_jugada()
         base_de_datos.append(jugada_registrada)
         print("¡Jugada registrada con éxito!")
 
@@ -46,19 +40,24 @@ while True:
             total_carreras = 0
             
             for jugada in base_de_datos:
-                if jugada["yardas"] <= 3:
+                formacion_actual = jugada[0]
+                down_actual = jugada[1]
+                yardas_actuales = jugada[2]
+                tipo_actual = jugada[3]
+
+                if yardas_actuales <= 3:
                     rango_jugada = 1
-                elif 4 <= jugada["yardas"] <= 6:
+                elif 4 <= yardas_actuales <= 6:
                     rango_jugada = 2
                 else:
                     rango_jugada = 3
 
-                if jugada["formacion"] == formacion_buscar and jugada["down"] == down_buscar and rango_jugada == yardas_buscar:
+                if formacion_actual == formacion_buscar and down_actual == down_buscar and rango_jugada == yardas_buscar:
                     coincidencias = coincidencias + 1
                     
-                    if jugada["tipo"] == 1:
+                    if tipo_actual == 1:
                         total_pases = total_pases + 1
-                    elif jugada["tipo"] == 2:
+                    elif tipo_actual == 2:
                         total_carreras = total_carreras + 1
 
             if coincidencias > 0:
@@ -75,7 +74,3 @@ while True:
 
     else:
         print("Opción no válida. Intenta de nuevo.")
-
-
-
-
